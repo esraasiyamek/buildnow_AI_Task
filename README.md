@@ -1,5 +1,3 @@
-# buildnow_AI_Task
-
 # Purchase Order Categorization Solution
 
 ## Overview
@@ -21,9 +19,9 @@ A scalable solution for categorizing multilingual purchase order items using NLP
 4. Run all cells sequentially (Runtime → Run all)
    *Note: Translation and embedding steps may take 20-40 minutes for 3000 items*
 
-## Technical Approach#
+## Technical Approach
 
-### Choses Methodlogy: Clustering with Text Embeddings
+### Chosen Methodlogy: Clustering with Text Embeddings
 **Why Clustering with Text Embeddings?**
 Clustering with text embeddings was chosen as it enables automatic categorization of multilingual purchase order items without requiring predefined rules or extensive domain knowledge. Given the diverse nature of construction-related items and their descriptions, a rule-based approach struggled due to the variety of terminologies, abbreviations, and multilingual content.
 
