@@ -3,7 +3,7 @@
 # Purchase Order Categorization Solution
 
 ## Overview
-A scalable solution for categorizing multilingual purchase order items using NLP and clustering with text embedding, developed for BuildNow's take-home assessment.
+A scalable solution for categorizing multilingual purchase order items using NLP and semantic clustering, developed for BuildNow's take-home assessment.
 
 ## Setup Instructions
 **1. Run in Google Colab:**  
@@ -12,7 +12,7 @@ A scalable solution for categorizing multilingual purchase order items using NLP
 **2. Requirements:**
 - Google account
 - OpenAI API key (free tier sufficient for testing)
-- prupurchase-order-items.xlsx dataset
+- 'purchase-order-items.xlsx' dataset
 
 **3. Setup Steps:**
 1. Open the notebook in Colab using the badge above
@@ -23,9 +23,8 @@ A scalable solution for categorizing multilingual purchase order items using NLP
 
 ## Technical Approach#
 
-**Choses Methodlogy: Clustering with Text Embeddings**
-Why Clustering with Text Embeddings?
-
+### Choses Methodlogy: Clustering with Text Embeddings
+**Why Clustering with Text Embeddings?**
 Clustering with text embeddings was chosen as it enables automatic categorization of multilingual purchase order items without requiring predefined rules or extensive domain knowledge. Given the diverse nature of construction-related items and their descriptions, a rule-based approach struggled due to the variety of terminologies, abbreviations, and multilingual content.
 
 Text embeddings, generated using OpenAI's text-embedding-3-large model, convert item descriptions into numerical vectors that capture their semantic meaning. Clustering these vectors using K-means allows similar items to be grouped together based on their context rather than relying on exact keyword matches.
@@ -48,7 +47,7 @@ Text embeddings, generated using OpenAI's text-embedding-3-large model, convert 
   - Spending by category.
   - Identification of top-spending items.
 
-**Comparison with Alternative Approaches**
+### Comparison with Alternative Approaches
 
 **Rule-Based Approach (Hybrid Attempt)**
 Initially, a rule-based approach was considered using a predefined dictionary of construction-related keywords mapped to categories. However, due to limited domain knowledge in construction terminology, defining comprehensive keyword lists proved challenging. The hybrid approach combined:
@@ -76,26 +75,32 @@ This approach resulted in only 800 out of 3000 data entries being categorized in
 
 ## Results & Insights
 
+### Key Findings
+- **Category Distribution**:
+  - Most Common: Building Fixtures & Hardware (559 items)
+  - Most Valuable: Reinforcing Steel Products (90,012 BCY/item)
+- **Spending Patterns**:
+  - Top 3 Categories: 51.4% of total spending
+  - Highest Spending: Building Fixtures & Hardware (27,295,818.98 BCY)
 
-**Key Findings**  
+### Recommendations
+1. **Credit Strategy**:
+   - Prioritize Steel Bars category (high spend/volume ratio)
+   - Develop category-specific risk models
+2. **Data Quality**:
+   - Standardize descriptions in Building Fixtures
+   - Add measurement unit metadata
+3. **Supplier Relations**:
+   - Negotiate bulk pricing for high-variance items
+   - Develop alternative supplier pipeline
 
-**Category Distribution**:
-- The most common categories are Building Fixtures & Hardware with 559 items.
-- The least common categories are Copper Wiring Supplies, Reinforcement Steel Products, Lighting Fixtures with only 148 items each.
+### Challenges Overcome
+- **Multilingual Handling**: Unified Arabic/English items through translation
+- **Messy Descriptions**: Regex cleaning + semantic clustering
+- **Cluster Validation**: LLM-assisted labeling
 
-**Spending Pattern**s:
-- The highest spending is in Building Fixtures & Hardware category with 27295818.98 BCY.
-- The category with highest average spending per item is Reinforcing Steel Products at 90012.23687747035 BCY per item.
-
-
-  **Recommendations**  
-- Focus credit offerings on Building Fixtures & Hardware, Reinforcing Steel Products, Steel Bars which account for 51.4% of total spending.
-- Investigate the Steel Bars category which has few items but significant spending.
-- Consider standardizing descriptions for Building Fixtures & Hardware to improve categorization.
-
-  **Future Improvement**  
-- Expand the taxonomy with sub-categories for more granular analysis.
-- Implement real-time categorization for new purchase orders.
-- Add supplier information to analyze category-supplier relationships. 
-
+### Future Improvements
+- Add sub-category taxonomy
+- Implement real-time processing
+- Integrate supplier performance metrics
 
