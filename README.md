@@ -80,25 +80,19 @@ This approach resulted in only 800 out of 3000 data entries being categorized in
 - **Spending Patterns**:
   - Top 3 Categories: 51.4% of total spending
   - Highest Spending: Building Fixtures & Hardware (27,295,818.98 BCY)
-
-### Recommendations
-1. **Credit Strategy**:
-   - Prioritize Steel Bars category (high spend/volume ratio)
-   - Develop category-specific risk models
-2. **Data Quality**:
-   - Standardize descriptions in Building Fixtures
-   - Add measurement unit metadata
-3. **Supplier Relations**:
-   - Negotiate bulk pricing for high-variance items
-   - Develop alternative supplier pipeline
+- **Recommendations**:
+  - Focus credit offerings on Building Fixtures & Hardware, Reinforcing Steel Products, Steel Bars which account for 51.4% of total spending.
+- Investigate the Steel Bars category which has few items but significant spending.
+- Consider standardizing descriptions for Building Fixtures & Hardware to improve categorization.
+- **Future Improvement**:
+- Expand the taxonomy with sub-categories for more granular analysis.
+- Implement real-time categorization for new purchase orders.
+- Add supplier information to analyze category-supplier relationships.
 
 ### Challenges Overcome
 - **Multilingual Handling**: Unified Arabic/English items through translation
 - **Messy Descriptions**: Regex cleaning + semantic clustering
 - **Cluster Validation**: LLM-assisted labeling
 
-### Future Improvements
-- Add sub-category taxonomy
-- Implement real-time processing
-- Integrate supplier performance metrics
+
 
